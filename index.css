@@ -1,0 +1,133 @@
+/* html {
+	border: 9px solid red;
+	position: fixed;
+	width: 98%;
+	height: 96%;
+	padding: 0px;
+	margin: 0px;
+} */
+
+body {
+	background-color: #000000;
+	position: fixed;
+	/* width: 100%;
+	height: 100%; */
+	color: white;
+	text-align: center;
+	margin: 0;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+	border: 5px solid grey;
+	/* border-style: solid;
+	border-color: yellow;
+	border-width: 5px; */
+}
+
+input {
+	display: inline;
+	background-color: black;
+	border: 1px solid grey;
+	color: white;
+	outline: none;
+	width: fit-content;
+}
+
+input:invalid {
+	border-color: rgb(175, 0, 0);
+}
+
+p {
+	display: inline;
+	/* border: 1px solid grey; */
+}
+
+#introScene {
+	position: fixed;
+	margin: 0;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	padding: 5px;
+}
+
+#introList > button {
+	display: block;
+	/* position: fixed; */
+	/* border: 3px solid grey; */
+	visibility: inherit;
+	margin: 5px auto;
+}
+
+#introList {
+	visibility: inherit;
+}
+
+#introList > div {
+	display: inline;
+	height: 1em;
+	padding: 3px;
+	text-align: center;
+	margin: 5px;
+}
+
+/* #intro > p {
+	line-height: 5px;
+} */
+
+#main {
+	display: grid;
+	position: fixed;
+	grid-template-rows: repeat(8, 1fr);
+	grid-template-columns: repeat(8, 1fr);
+	/* width: auto;
+	height: auto; */
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	border-style: solid;
+	border-color: grey;
+	border-width: 5px;
+	visibility: hidden;
+} 
+
+.gridContainer>div {
+	border: 5px solid grey;
+	overflow: auto;
+	word-wrap: break-word;
+}
+
+#holder1 {
+	grid-column: 1 / span 3;
+	grid-row: 1 / span 4;
+}
+
+#holder2 {
+	grid-column: 4 / span 3;
+	grid-row: 1 / span 4;
+}
+
+#holder3 {
+	grid-column: 1 / span 6;
+	grid-row: 5 / span 5;
+}
+
+#holder4 {
+	grid-column: 7 / span 2;
+	grid-row: 1 / span 8;
+}
+
+.inlineLabel {
+	display: inline;
+	border: none;
+	padding: 5px;
+}
+
+.blockLabel {
+	display: block;
+	border: none;
+}
