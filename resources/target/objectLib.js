@@ -1,0 +1,6 @@
+
+const objectLib = {
+	
+};
+
+export {objectLib};
