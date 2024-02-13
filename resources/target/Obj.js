@@ -1,5 +1,6 @@
 import { IDGet } from "./Target.js";
 import { objectStatLib } from "./object/objectStatLib.js";
+// import { nameValueLabel } from "./display/nameValueLabel.js";
 
 class Obj {
 	constructor(name, location) {
@@ -32,6 +33,7 @@ class Obj {
 		locationDiv.append(locationLabel);
 		let locationValue = document.createElement('span');
 		locationValue.innerText = this.location.name;
+		locationValue.className = "clickable";
 		if (callback && obj.location) locationValue.onclick = function() {callback(obj.location)};
 		locationDiv.append(locationValue);
 		targetable.append(locationDiv);
@@ -58,6 +60,9 @@ class Obj {
 		statDiv.append(statLabel);
 		let statValue = document.createElement('span');
 		statValue.innerText = stat.value;
+		if (stat.clickable) {
+			statValue.className = "clickable";
+		}
 		if (callback && target) statValue.onclick = function() {callback(target)};
 		statDiv.append(statValue);
 		targetable.append(statDiv);

@@ -1,0 +1,6 @@
+
+class ActionListable {
+	
+}
+
+export {ActionListable};

@@ -77,6 +77,9 @@ class Character{
 		locationDiv.append(locationLabel);
 		let locationValue = document.createElement('span');
 		locationValue.innerText = this.location.name;
+		if (this.location.getTargetable) {
+			locationValue.className = 'clickable';
+		}
 		if (callback && char.location) locationValue.onclick = function() {callback(char.location)};
 		locationDiv.append(locationValue);
 		targetable.append(locationDiv);
@@ -119,6 +122,9 @@ class Character{
 		statDiv.append(statLabel);
 		let statValue = document.createElement('span');
 		statValue.innerText = stat.value;
+		if (stat.clickable) {
+			statValue.className = "clickable";
+		}
 		if (callback && target) statValue.onclick = function() {callback(target)};
 		statDiv.append(statValue);
 		targetable.append(statDiv);

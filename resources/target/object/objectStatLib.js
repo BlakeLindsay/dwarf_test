@@ -4,7 +4,8 @@ let objectStatLib = {
 		label: "Object: ",
 		value: "Default",
 		color: "grey",
-		textShadow: `0 0 10px grey`
+		textShadow: `0 0 10px grey`,
+		clickable: true
 	},
 	value: {
 		label: "Value: ",

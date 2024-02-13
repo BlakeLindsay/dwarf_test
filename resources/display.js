@@ -1,6 +1,7 @@
 import { world } from "../main.js";
 import { displayLocalObjects } from "./display/displayLocalObjects.js";
 import { displayActionButtons } from "./display/displayActionButtons.js";
+import { nameValueLabel } from "./display/nameValueLabel.js";
 
 let targetLocked = false;
 let currentTarget;
@@ -59,6 +60,7 @@ function displayLocalExits(exits) {
 		let element = document.createElement('span');
 		element.innerText = exit.value;
 		element.className = 'inlineLabel';
+		element.className += ' clickable';
 		element.style.color = exit.color;
 		element.onmouseover = function() {displayTargetMouseOver(exit.target)};
 		element.onclick = function() {lockTarget(exit.target)};
@@ -133,6 +135,7 @@ function addInlineLabel(parent, target) {
 		let element = document.createElement('span');
 		element.innerText = target.stats.name.value;
 		element.className = 'inlineLabel';
+		if (target.getTargetable) element.className += " clickable";
 		// let tooltip = document.createElement('span');
 		// tooltip.innerText = `${text}'s tooltip`;
 		// tooltip.className = 'tooltip';

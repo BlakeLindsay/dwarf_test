@@ -5,7 +5,8 @@ let statLib = {
 		value: "Default",
 		color: "grey",
 		textShadow: `0 0 10px grey`,
-		target: "self"
+		target: "self",
+		clickable: true
 	},
 	health: {
 		label: "Health: ",

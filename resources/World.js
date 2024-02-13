@@ -84,7 +84,7 @@ class World{
 			if (actionable.act) actionable.act();
 		});
 		
-	if (this.time.second != timePresetsLib.maxSeconds) {
+		if (this.time.second != timePresetsLib.maxSeconds) {
 			this.time.second++;
 		} else {
 			this.time.second = 0;

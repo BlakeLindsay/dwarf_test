@@ -1,7 +1,7 @@
 import {Target, Character, actionLib, statLib} from "../target/Target.js";
 import {actionables} from "../World.js";
 import { Obj} from "../target/Obj.js";
-import { nvLabel } from "../display/nvLabel.js";
+import { nameValueLabel } from "../display/nameValueLabel.js";
 
 
 class Location {
@@ -95,6 +95,7 @@ class Location {
 			withinDiv.appendChild(withinLabel);
 			let withinName = document.createElement('span');
 			withinName.innerText = this.parent.name;
+			withinName.className = 'clickable';
 			withinName.onclick = function() {callback(location.parent)};
 			withinDiv.appendChild(withinName);
 			targetable.appendChild(withinDiv);
@@ -109,6 +110,7 @@ class Location {
 		locationDiv.appendChild(locationLabel);
 		let locationName = document.createElement('span');
 		locationName.innerText = this.name;
+		locationName.className = 'clickable';
 		locationName.onclick = function() {callback(location)};
 		locationDiv.appendChild(locationName);
 		targetable.append(locationDiv);
@@ -124,6 +126,7 @@ class Location {
 			let label = document.createElement('span');
 			label.innerText = otherLocation.name;
 			label.className = 'inlineLabel';
+			label.className += ' clickable';
 			label.onclick = function() {callback(otherLocation)};
 			exits.append(label);
 		});
@@ -142,10 +145,11 @@ class Location {
 		// 	chars.append(label);
 		// });
 		// targetable.append(chars);
-		this.appendTargetable(targetable, this.characters, callback, "Characters: ", {color: 'grey'});
+		// this.appendTargetable(targetable, this.characters, callback, "Characters: ", {color: 'grey'});
+		nameValueLabel({target: targetable, label: "Characters: ", callback, stats: this.characters, color: 'grey', clickable: true});
 
 		// this.appendTargetable(targetable, this.objects, callback, "Objects: ", { color: 'grey'});
-		nvLabel({target: targetable, label: "Objects: ", callback, stats: this.objects, color: 'grey'});
+		nameValueLabel({target: targetable, label: "Objects: ", callback, stats: this.objects, color: 'grey', clickable: true});
 
 		return targetable;
 	}
